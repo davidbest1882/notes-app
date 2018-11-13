@@ -18,7 +18,7 @@
     if (outcome === expected) {
       var result = "true";
     } else {
-      var result = "false --- "+ "expected: " + outcome + " but got: " + expected;
+      var result = "false --- "+ "expected: " + expected+ " but got: " + outcome;
     }
 
     var t = document.createTextNode(result)
@@ -30,9 +30,31 @@
       document.body.appendChild(div).style.color = "red"
     }
   }
+  // Lines below created by DB
+  function assertNotEquals(outcome, expected) {
+    var div = document.createElement("P")
+    if (outcome != expected) {
+      var result = "true";
+    } else {
+      var result = "false --- "+ "expected: " + expected+ " but got: " + outcome;
+    }
+
+    var t = document.createTextNode(result)
+    div.appendChild(t);
+
+    if (result === "true") {
+      document.body.appendChild(div).style.color = "green"
+    } else {
+      document.body.appendChild(div).style.color = "red"
+    }
+  }
+  // Lines above created by DB
 
   exports.describe = describe
   exports.it = it
   exports.assertEquals = assertEquals
+  // Line below created by DB
+  exports.assertNotEquals = assertNotEquals
+
 
 })(this)
