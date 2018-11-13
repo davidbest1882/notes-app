@@ -18,7 +18,7 @@
     if (outcome === expected) {
       var result = "true";
     } else {
-      var result = "false --- "+ "expected: " + outcome + " but got: " + expected;
+      var result = "false --- "+ "expected: " + expected + " but got: " + outcome;
     }
 
     var t = document.createTextNode(result)
