@@ -1,33 +1,3 @@
-// function describe(message, func) {
-//   document.getElementById("describe").innerHTML = message;
-//   func();
-// };
-//
-// function it(message, func) {
-//   document.getElementById("it").innerHTML = message;
-//   result = func();
-// };
-//
-// function assertEquals(outcome, expected) {
-//   if (outcome === expected) {
-//     document.getElementById("it").style.color = "green";
-//     return true;
-//   } else {
-//     document.getElementById("it").style.color = "red";
-//     return false;
-//   }
-// };
-//
-function add(a, b) {
-  return a + b;
-}
-//
-// describe('this is a describe test', function() {
-//   it('this is an it test', function() {
-//     assertEquals(add(5, 4), 9);
-//   })
-// })
-
 (function(exports) {
   function describe(description, it) {
     var describeDiv = document.createElement("H2")
@@ -48,11 +18,17 @@ function add(a, b) {
     if (outcome === expected) {
       var result = "true";
     } else {
-      var result = "false";
+      var result = "false --- "+ "expected: " + outcome + " but got: " + expected;
     }
+
     var t = document.createTextNode(result)
     div.appendChild(t);
-    document.body.appendChild(div);
+
+    if (result === "true") {
+      document.body.appendChild(div).style.color = "green"
+    } else {
+      document.body.appendChild(div).style.color = "red"
+    }
   }
 
   exports.describe = describe
@@ -60,9 +36,3 @@ function add(a, b) {
   exports.assertEquals = assertEquals
 
 })(this)
-
-describe('this is a describe test', function() {
-  it('this is an it test', function() {
-    assertEquals(add(5, 4), 9);
-  })
-})
