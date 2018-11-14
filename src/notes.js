@@ -4,15 +4,15 @@ var notes = function Note() {
   //   "chicken dippers are ": "chicken dippers are really fun in the sun and are naked sometimes",
   //   "cheese twirls make t": "cheese twirls make the world a fun place chicken"}
 
-  Note.prototype.allNotes = function() {
-    return this._allNotes
-  }
-}
+  // Note.prototype.allNotes = function() {
+  //   return this._allNotes
+  // };
+};
 
 (function(anyObj){
   var notes = [];
-  
-  function addNote(){
+
+  function addNote(note){
     var note = document.getElementById("name").value;
     if (note === "") {
       document.getElementById("stat_msg").innerHTML = "No message entered";
@@ -24,4 +24,6 @@ var notes = function Note() {
   anyObj.notes = notes;
 })(this)
 
-document.getElementById("post_it").onclick = function(){addNote()};
+// document.getElementById("post_it").onclick = function(){addNote()};
+// Commented out above line as needs to be separated into a file that
+// is not required in the dragontesting.html file as this throws an error

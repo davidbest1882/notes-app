@@ -12,7 +12,6 @@
     return note.substring(0, 20)
   }
 
-
   exports.displayNote = displayNote
   exports.abbrNote = abbrNote
 })(notes)

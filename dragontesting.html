@@ -16,8 +16,12 @@
 
 <body>
   <h1 class="display-2"> Dragon Testing</h1>
+  <p id="name"></p>
   <script src="./src/notes.js"></script>
   <script src="./src/notes_methods.js"></script>
   <script src="./spec/testFramework.js"></script>
   <script src="./spec/notesSpec.js"></script>
 </body>
+
+<!-- Added id="name" as function addNote was breaking
+the tests due to there not being a name id on the page  -->

@@ -26,15 +26,28 @@ describe("Notes", function() {
 
   describe("checks that", function() {
     it("a note has been added", function() {
-      var note = new Note();
-      note.addNote("Hello world");
-      assertEquals("Hello world", note.notesArray[0])
+      // var note = new Note();
+      addNote("Hello world");
+      assertEquals("Hello world", notes[0])
     });
 
     it("there is no note", function() {
-      var note = new Note();
-      note.addNote("Hello world");
-      assertNotEquals("Goodbye world", note.notesArray[0])
+      // var note = new Note();
+      addNote("Hello world");
+      assertNotEquals("Goodbye world", notes[0])
     });
   });
 });
+
+//Changes made:
+//Removed reference to Note(); in bottom two tests as the error
+//stated that Note was not defined.
+//
+
+//Issues to be resolved:
+//the notes array is containing undefined elements, not strings.
+//This is due to the function relying on getting the input from the web
+//page, rather than a parameter, but the tests are passing an argument.
+//The addNote() function needs to be changed so that it takes a parameter (note)
+//and adds this to the array. There can there be a second function which
+//states that onclick for the 'post it' button, it calls the addNote method
