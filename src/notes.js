@@ -27,9 +27,11 @@
 
 // method added by SVR below for testing accordion
   function displayNotes(text){
+
       var nNotes = text;
       var di = document.getElementById("display-notes");
-
+      var olditems = document.getElementById("display-notes").hasChildNodes();
+      di.innerHTML = '';
       for(var i=0;i<nNotes.length;i++){
         var nodeB = document.createElement("BUTTON");
         nodeB.setAttribute("class","accordion");
