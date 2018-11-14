@@ -1,9 +1,18 @@
+
+var notes = function Note() {
+  // {"This is a full note w": "This is a full note with lots of characters and it is long and stuff.",
+  //   "chicken dippers are ": "chicken dippers are really fun in the sun and are naked sometimes",
+  //   "cheese twirls make t": "cheese twirls make the world a fun place chicken"}
+
+  Note.prototype.allNotes = function() {
+    return this._allNotes
+  }
+}
+
 (function(anyObj){
-  // Line below created by DB
   var notes = [];
+  
   function addNote(){
-    //console.log("how bizzare")
-    //var notes = [];
     var note = document.getElementById("name").value;
     if (note === "") {
       document.getElementById("stat_msg").innerHTML = "No message entered";
@@ -16,8 +25,3 @@
 })(this)
 
 document.getElementById("post_it").onclick = function(){addNote()};
-// Lines below created by DB
-
-// Lines above created by DB
-
-//var val =
