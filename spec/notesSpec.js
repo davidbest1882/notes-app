@@ -23,4 +23,18 @@ describe("Notes", function() {
       assertEquals(notes.abbrNote("cheese twirls make the world a fun place chicken"), "cheese twirls make t")
     });
   });
+
+  describe("checks that", function() {
+    it("a note has been added", function() {
+      var note = new Note();
+      note.addNote("Hello world");
+      assertEquals("Hello world", note.notesArray[0])
+    });
+
+    it("there is no note", function() {
+      var note = new Note();
+      note.addNote("Hello world");
+      assertNotEquals("Goodbye world", note.notesArray[0])
+    });
+  });
 });

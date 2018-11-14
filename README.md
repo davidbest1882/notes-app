@@ -14,7 +14,7 @@ Notes App is a front end web application written in pure JavaScript which allows
 
 3. Run the notes application
 
-`open notes.html`
+`open index.html`
 
 ## Testing
 
