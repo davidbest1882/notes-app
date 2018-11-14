@@ -26,13 +26,11 @@ describe("Notes", function() {
 
   describe("checks that", function() {
     it("a note has been added", function() {
-      // var note = new Note();
       addNote("Hello world");
       assertEquals("Hello world", notes[0])
     });
 
     it("there is no note", function() {
-      // var note = new Note();
       addNote("Hello world");
       assertNotEquals("Goodbye world", notes[0])
     });
