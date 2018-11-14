@@ -21,25 +21,27 @@
     } else {
       notes.push(note);
       // Line below included by SVR - Known issue contents replicated div needs to be reloaded
-      displayNotes();
+      displayNotes(notes);
     };
   }
 
 // method added by SVR below for testing accordion
-  function displayNotes(){
+  function displayNotes(text){
+      var nNotes = text;
       var di = document.getElementById("display-notes");
 
-      for(var i=0;i<notes.length;i++){
+      for(var i=0;i<nNotes.length;i++){
         var nodeB = document.createElement("BUTTON");
         nodeB.setAttribute("class","accordion");
-        var abbTxt = notes[i].slice(0,20)
+        var abbTxt = nNotes[i].slice(0,20);
+        var fullTxt =nNotes[i];
         var textnodeB = document.createTextNode(abbTxt);
         nodeB.appendChild(textnodeB);
         di.appendChild(nodeB);
         var nodeD = document.createElement("DIV");
         nodeD.setAttribute("class","panel");
         var nodeP = document.createElement("P")
-        var textnodeP = document.createTextNode(notes[i]);
+        var textnodeP = document.createTextNode(fullTxt);
         nodeP.appendChild(textnodeP);
         nodeD.appendChild(nodeP);
         di.appendChild(nodeD);
