@@ -76,17 +76,17 @@
   }
 
   function makeDouble(name) {
-      this[name] = function() {}
+    this[name] = function() {}
 
-      function addMethod(method, output) {
-        this[method] = function() {
-          return output
-        }
+    function addMethod(method, output) {
+      this[method] = function() {
+        return output
       }
+    }
 
-      return {
-        addMethod: addMethod
-      }
+    return {
+      addMethod: addMethod
+    }
   }
 
   exports.describe = describe
