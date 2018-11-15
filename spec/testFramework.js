@@ -49,9 +49,36 @@
     }
   }
 
+  function toEqual(expectedValue) {
+    var div = document.createElement("P")
+    if (expectedValue === actualValue) {
+      var result = "true";
+    } else {
+      var result = "false --- "+ "expected: " + expectedValue + " but got: " + actualValue;
+    }
+
+    var t = document.createTextNode(result)
+    div.appendChild(t);
+
+    if (result === "true") {
+      document.body.appendChild(div).style.color = "green"
+    } else {
+      document.body.appendChild(div).style.color = "red"
+    }
+  }
+
+  function expect(actual) {
+    actualValue = actual;
+
+    return {
+      toEqual: toEqual
+    }
+  }
+
   exports.describe = describe
   exports.it = it
   exports.assertEquals = assertEquals
   exports.assertNotEquals = assertNotEquals
+  exports.expect = expect
 
 })(this)
