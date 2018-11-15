@@ -75,10 +75,25 @@
     }
   }
 
+  function makeDouble(name) {
+      this[name] = function() {}
+
+      function addMethod(method, output) {
+        this[method] = function() {
+          return output
+        }
+      }
+
+      return {
+        addMethod: addMethod
+      }
+  }
+
   exports.describe = describe
   exports.it = it
   exports.assertEquals = assertEquals
   exports.assertNotEquals = assertNotEquals
   exports.expect = expect
+  exports.makeDouble = makeDouble
 
 })(this)
