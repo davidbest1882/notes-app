@@ -28,6 +28,5 @@ function getAbbrNoteFromURL(location) {
 
 function showNote(abbrNote) {
   abbrNote = abbrNote.replace(/%20/g, ' ')
-  if (abbrNote.length < 20) {abbrNote = abbrNote + " "}
-  document.getElementById('display-note').innerHTML = notes.displayNote(abbrNote);
+  document.getElementById('display-note').innerHTML = "Current note: <br>" + notes.displayNote(abbrNote);
 };

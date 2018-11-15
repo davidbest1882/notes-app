@@ -1,0 +1,20 @@
+textarea {
+  width: 80%;
+}
+
+body {
+  font-family: Arial, Sans-Serif;
+  background-image: url('background.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: white;
+  text-align: center;
+}
+
+h1 {
+  font-size: 50px;
+}
+
+a {
+  color: hotpink;
+}
