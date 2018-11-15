@@ -9,6 +9,7 @@ document.getElementById("post_it").onclick = function() {
   a.appendChild(t);
   document.body.appendChild(a);
   document.body.appendChild(b);
+  document.getElementById("name").value = "";
   i ++;
 };
 
@@ -30,3 +31,11 @@ function showNote(abbrNote) {
   abbrNote = abbrNote.replace(/%20/g, ' ')
   document.getElementById('display-note').innerHTML = "Current note: <br>" + notes.displayNote(abbrNote);
 };
+
+var input = document.getElementById("name");
+input.addEventListener("keyup", function(event) {
+  event.preventDefault();
+  if (event.keyCode === 13) {
+    document.getElementById("post_it").click();
+  }
+});
