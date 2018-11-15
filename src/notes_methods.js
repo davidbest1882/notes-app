@@ -1,8 +1,5 @@
 (function(exports) {
   var allNotes = {}
-  allNotes["This is a full note "] = "This is a full note with lots of characters and it is long and stuff."
-  allNotes["chicken dippers are "] = "chicken dippers are really fun in the sun and are naked sometimes"
-  allNotes["cheese twirls make t"] = "cheese twirls make the world a fun place chicken"
 
   function displayNote(abbrNote) {
     return allNotes[abbrNote]
@@ -12,6 +9,16 @@
     return note.substring(0, 20)
   }
 
+  function addNote(note) {
+    allNotes[abbrNote(note)] = note
+  }
+
+  function getAllNotes() {
+    return allNotes
+  }
+
   exports.displayNote = displayNote
   exports.abbrNote = abbrNote
+  exports.addNote = addNote
+  exports.getAllNotes = getAllNotes
 })(notes)
